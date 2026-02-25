@@ -1,0 +1,20 @@
+[2026-02-12T22:03:37.942+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-02-12T22:03:38.045+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ecommerce_sales_pipeline.run_etl_pipeline scheduled__2026-02-12T21:00:00+00:00 [queued]>
+[2026-02-12T22:03:38.078+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ecommerce_sales_pipeline.run_etl_pipeline scheduled__2026-02-12T21:00:00+00:00 [queued]>
+[2026-02-12T22:03:38.085+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 3
+[2026-02-12T22:03:38.111+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): run_etl_pipeline> on 2026-02-12 21:00:00+00:00
+[2026-02-12T22:03:38.122+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'ecommerce_sales_pipeline', 'run_etl_pipeline', 'scheduled__2026-02-12T21:00:00+00:00', '--job-id', '51', '--raw', '--subdir', 'DAGS_FOLDER/ecommerce_pipeline_dag.py', '--cfg-path', '/tmp/tmpqg5jv558']
+[2026-02-12T22:03:38.126+0000] {standard_task_runner.py:91} INFO - Job 51: Subtask run_etl_pipeline
+[2026-02-12T22:03:38.381+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62 DeprecationWarning: This process (pid=1955) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-02-12T22:03:38.382+0000] {standard_task_runner.py:64} INFO - Started process 1963 to run task
+[2026-02-12T22:03:39.842+0000] {task_command.py:426} INFO - Running <TaskInstance: ecommerce_sales_pipeline.run_etl_pipeline scheduled__2026-02-12T21:00:00+00:00 [running]> on host 2c81816151a4
+[2026-02-12T22:03:40.407+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='rakshith' AIRFLOW_CTX_DAG_ID='ecommerce_sales_pipeline' AIRFLOW_CTX_TASK_ID='run_etl_pipeline' AIRFLOW_CTX_EXECUTION_DATE='2026-02-12T21:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-02-12T21:00:00+00:00'
+[2026-02-12T22:03:40.408+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-02-12T22:03:40.422+0000] {ecommerce_pipeline_dag.py:103} INFO - Starting ETL pipeline run...
+[2026-02-12T22:03:41.130+0000] {ecommerce_pipeline_dag.py:172} INFO - ETL complete: 153 transactions loaded
+[2026-02-12T22:03:41.131+0000] {python.py:237} INFO - Done. Returned value was: {'transactions_loaded': 153}
+[2026-02-12T22:03:41.132+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-02-12T22:03:41.180+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=ecommerce_sales_pipeline, task_id=run_etl_pipeline, run_id=scheduled__2026-02-12T21:00:00+00:00, execution_date=20260212T210000, start_date=20260212T220338, end_date=20260212T220341
+[2026-02-12T22:03:41.254+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2026-02-12T22:03:41.277+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-02-12T22:03:41.280+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

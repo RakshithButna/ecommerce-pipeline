@@ -1,0 +1,21 @@
+[2026-02-12T01:53:17.210+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-02-12T01:53:17.240+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ecommerce_sales_pipeline.fetch_products manual__2026-02-12T01:53:16.022254+00:00 [queued]>
+[2026-02-12T01:53:17.248+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ecommerce_sales_pipeline.fetch_products manual__2026-02-12T01:53:16.022254+00:00 [queued]>
+[2026-02-12T01:53:17.249+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 3
+[2026-02-12T01:53:17.261+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): fetch_products> on 2026-02-12 01:53:16.022254+00:00
+[2026-02-12T01:53:17.270+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62 DeprecationWarning: This process (pid=363) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-02-12T01:53:17.272+0000] {standard_task_runner.py:64} INFO - Started process 365 to run task
+[2026-02-12T01:53:17.270+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'ecommerce_sales_pipeline', 'fetch_products', 'manual__2026-02-12T01:53:16.022254+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/ecommerce_pipeline_dag.py', '--cfg-path', '/tmp/tmp3wtckl7e']
+[2026-02-12T01:53:17.273+0000] {standard_task_runner.py:91} INFO - Job 4: Subtask fetch_products
+[2026-02-12T01:53:17.354+0000] {task_command.py:426} INFO - Running <TaskInstance: ecommerce_sales_pipeline.fetch_products manual__2026-02-12T01:53:16.022254+00:00 [running]> on host 2c81816151a4
+[2026-02-12T01:53:17.429+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='admin@ecommerce-pipeline.com' AIRFLOW_CTX_DAG_OWNER='rakshith' AIRFLOW_CTX_DAG_ID='ecommerce_sales_pipeline' AIRFLOW_CTX_TASK_ID='fetch_products' AIRFLOW_CTX_EXECUTION_DATE='2026-02-12T01:53:16.022254+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-02-12T01:53:16.022254+00:00'
+[2026-02-12T01:53:17.430+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-02-12T01:53:17.444+0000] {ecommerce_pipeline_dag.py:50} INFO - Fetching products from Fake Store API...
+[2026-02-12T01:53:18.031+0000] {ecommerce_pipeline_dag.py:56} INFO - Fetched 20 products from API
+[2026-02-12T01:53:18.113+0000] {ecommerce_pipeline_dag.py:100} INFO - Products sync complete: 0 inserted, 20 updated
+[2026-02-12T01:53:18.114+0000] {python.py:237} INFO - Done. Returned value was: {'inserted': 0, 'updated': 20}
+[2026-02-12T01:53:18.114+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-02-12T01:53:18.325+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=ecommerce_sales_pipeline, task_id=fetch_products, run_id=manual__2026-02-12T01:53:16.022254+00:00, execution_date=20260212T015316, start_date=20260212T015317, end_date=20260212T015318
+[2026-02-12T01:53:18.369+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2026-02-12T01:53:18.391+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-02-12T01:53:18.394+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

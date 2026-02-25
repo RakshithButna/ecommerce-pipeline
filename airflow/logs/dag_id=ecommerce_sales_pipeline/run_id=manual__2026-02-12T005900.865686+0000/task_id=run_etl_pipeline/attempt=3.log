@@ -1,0 +1,64 @@
+[2026-02-12T01:37:26.788+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-02-12T01:37:27.202+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ecommerce_sales_pipeline.run_etl_pipeline manual__2026-02-12T00:59:00.865686+00:00 [queued]>
+[2026-02-12T01:37:27.228+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ecommerce_sales_pipeline.run_etl_pipeline manual__2026-02-12T00:59:00.865686+00:00 [queued]>
+[2026-02-12T01:37:27.229+0000] {taskinstance.py:2306} INFO - Starting attempt 3 of 3
+[2026-02-12T01:37:27.314+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): run_etl_pipeline> on 2026-02-12 00:59:00.865686+00:00
+[2026-02-12T01:37:28.383+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'ecommerce_sales_pipeline', 'run_etl_pipeline', 'manual__2026-02-12T00:59:00.865686+00:00', '--job-id', '39', '--raw', '--subdir', 'DAGS_FOLDER/ecommerce_pipeline_dag.py', '--cfg-path', '/tmp/tmpta5jzwyl']
+[2026-02-12T01:37:28.394+0000] {standard_task_runner.py:91} INFO - Job 39: Subtask run_etl_pipeline
+[2026-02-12T01:37:28.631+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62 DeprecationWarning: This process (pid=441) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-02-12T01:37:28.632+0000] {standard_task_runner.py:64} INFO - Started process 456 to run task
+[2026-02-12T01:38:09.357+0000] {task_command.py:426} INFO - Running <TaskInstance: ecommerce_sales_pipeline.run_etl_pipeline manual__2026-02-12T00:59:00.865686+00:00 [running]> on host 7b54abb0e169
+[2026-02-12T01:38:45.203+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='admin@ecommerce-pipeline.com' AIRFLOW_CTX_DAG_OWNER='rakshith' AIRFLOW_CTX_DAG_ID='ecommerce_sales_pipeline' AIRFLOW_CTX_TASK_ID='run_etl_pipeline' AIRFLOW_CTX_EXECUTION_DATE='2026-02-12T00:59:00.865686+00:00' AIRFLOW_CTX_TRY_NUMBER='3' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-02-12T00:59:00.865686+00:00'
+[2026-02-12T01:38:45.216+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-02-12T01:45:49.935+0000] {local_task_job_runner.py:124} ERROR - Received SIGTERM. Terminating subprocesses
+[2026-02-12T01:45:50.202+0000] {process_utils.py:132} INFO - Sending 15 to group 456. PIDs of all processes in the group: [456]
+[2026-02-12T01:45:50.220+0000] {process_utils.py:87} INFO - Sending the signal 15 to group 456
+[2026-02-12T01:45:53.937+0000] {taskinstance.py:2611} ERROR - Received SIGTERM. Terminating subprocesses.
+[2026-02-12T01:45:53.939+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-02-12T01:45:53.962+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 392, in wrapper
+    from airflow.decorators.base import DecoratedOperator
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/decorators/__init__.py", line 21, in <module>
+    from airflow.decorators.base import TaskDecorator
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/decorators/base.py", line 530, in <module>
+    @attr.define(kw_only=True, repr=False)
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/attr/_next_gen.py", line 144, in wrap
+    return do_it(cls, True)
+           ^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/attr/_next_gen.py", line 90, in do_it
+    return attrs(
+           ^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/attr/_make.py", line 1715, in attrs
+    return wrap(maybe_cls)
+           ^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/attr/_make.py", line 1619, in wrap
+    builder = _ClassBuilder(
+              ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/attr/_make.py", line 724, in __init__
+    attrs, base_attrs, base_map = _transform_attrs(
+                                  ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/attr/_make.py", line 598, in _transform_attrs
+    AttrsClass = _make_attr_tuple_class(cls.__name__, attr_names)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/attr/_make.py", line 373, in _make_attr_tuple_class
+    _compile_and_eval("\n".join(attr_class_template), globs)
+  File "/home/airflow/.local/lib/python3.12/site-packages/attr/_make.py", line 318, in _compile_and_eval
+    eval(bytecode, globs, locs)
+  File "", line 1, in <module>
+  File "", line 21, in DecoratedMappedOperatorAttributes
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 2613, in signal_handler
+    raise AirflowTaskTerminated("Task received SIGTERM signal")
+airflow.exceptions.AirflowTaskTerminated: Task received SIGTERM signal
+[2026-02-12T01:45:53.978+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=ecommerce_sales_pipeline, task_id=run_etl_pipeline, run_id=manual__2026-02-12T00:59:00.865686+00:00, execution_date=20260212T005900, start_date=20260212T013727, end_date=20260212T014553
+[2026-02-12T01:46:00.264+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=456, status='terminated', exitcode=2, started='01:37:26') (456) terminated with exit code 2
+[2026-02-12T01:46:00.265+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 143
+[2026-02-12T01:46:00.305+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-02-12T01:46:00.715+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

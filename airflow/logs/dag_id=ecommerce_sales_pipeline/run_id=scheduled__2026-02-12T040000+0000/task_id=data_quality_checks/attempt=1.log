@@ -1,0 +1,20 @@
+[2026-02-12T05:49:15.175+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-02-12T05:49:15.228+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ecommerce_sales_pipeline.data_quality_checks scheduled__2026-02-12T04:00:00+00:00 [queued]>
+[2026-02-12T05:49:15.238+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ecommerce_sales_pipeline.data_quality_checks scheduled__2026-02-12T04:00:00+00:00 [queued]>
+[2026-02-12T05:49:15.239+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 3
+[2026-02-12T05:49:15.269+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): data_quality_checks> on 2026-02-12 04:00:00+00:00
+[2026-02-12T05:49:15.379+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62 DeprecationWarning: This process (pid=883) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-02-12T05:49:15.379+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'ecommerce_sales_pipeline', 'data_quality_checks', 'scheduled__2026-02-12T04:00:00+00:00', '--job-id', '29', '--raw', '--subdir', 'DAGS_FOLDER/ecommerce_pipeline_dag.py', '--cfg-path', '/tmp/tmp4h3scm_1']
+[2026-02-12T05:49:15.381+0000] {standard_task_runner.py:64} INFO - Started process 884 to run task
+[2026-02-12T05:49:15.382+0000] {standard_task_runner.py:91} INFO - Job 29: Subtask data_quality_checks
+[2026-02-12T05:49:15.478+0000] {task_command.py:426} INFO - Running <TaskInstance: ecommerce_sales_pipeline.data_quality_checks scheduled__2026-02-12T04:00:00+00:00 [running]> on host 2c81816151a4
+[2026-02-12T05:49:15.625+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='rakshith' AIRFLOW_CTX_DAG_ID='ecommerce_sales_pipeline' AIRFLOW_CTX_TASK_ID='data_quality_checks' AIRFLOW_CTX_EXECUTION_DATE='2026-02-12T04:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-02-12T04:00:00+00:00'
+[2026-02-12T05:49:15.627+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-02-12T05:49:15.648+0000] {ecommerce_pipeline_dag.py:180} INFO - Running data quality checks...
+[2026-02-12T05:49:16.622+0000] {ecommerce_pipeline_dag.py:222} INFO - All data quality checks passed!
+[2026-02-12T05:49:16.625+0000] {python.py:237} INFO - Done. Returned value was: {'status': 'all_checks_passed'}
+[2026-02-12T05:49:16.628+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-02-12T05:49:16.664+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=ecommerce_sales_pipeline, task_id=data_quality_checks, run_id=scheduled__2026-02-12T04:00:00+00:00, execution_date=20260212T040000, start_date=20260212T054915, end_date=20260212T054916
+[2026-02-12T05:49:16.740+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2026-02-12T05:49:16.760+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-02-12T05:49:16.762+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

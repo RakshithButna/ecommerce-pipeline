@@ -27,7 +27,7 @@ High-Level Flow:
 
 ### 🔹 Main Dashboard View
 
-![Dashboard Preview](dashboard.png)
+![Dashboard Preview](Dashboard.png)
 
 ### 🔹 Charts & Product Insights
 

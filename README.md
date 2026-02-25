@@ -1,4 +1,3 @@
-
 # 🚀 Real-Time E-commerce Data Platform
 
 ## 📌 Overview
@@ -13,7 +12,7 @@ The goal of this project is to demonstrate practical Data Engineering and Analyt
 
 ## 🏗 Architecture
 
-![Architecture Diagram](assets/architecture.png)
+![Architecture Diagram](architecture.png)
 
 High-Level Flow:
 
@@ -27,22 +26,27 @@ High-Level Flow:
 ## 📊 Dashboard Preview
 
 ### 🔹 Main Dashboard View
-![Dashboard Preview](assets/dashboard.png)
+
+![Dashboard Preview](dashboard.png)
 
 ### 🔹 Charts & Product Insights
-![Charts Preview](assets/charts.png)
+
+![Charts Preview](charts.png)
 
 ### 🔹 Filtered View Example
-![Filter Example](assets/filter.png)
+
+![Filter Example](filter.png)
 
 ---
 
 ## 🗄 Data Model (Star Schema)
 
 **Fact Table**
+
 - `sales_fact`
 
 **Dimension Tables**
+
 - `customers`
 - `products`
 - `location`
